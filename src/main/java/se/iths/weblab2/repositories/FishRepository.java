@@ -1,7 +1,8 @@
-package se.iths.weblab2;
+package se.iths.weblab2.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import se.iths.weblab2.entities.Fish;
 
 import java.util.List;
 

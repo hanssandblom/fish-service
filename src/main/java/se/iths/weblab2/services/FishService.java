@@ -1,15 +1,18 @@
-package se.iths.weblab2;
+package se.iths.weblab2.services;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import se.iths.weblab2.dtos.FishDto;
+import se.iths.weblab2.entities.Fish;
+import se.iths.weblab2.repositories.FishRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class FishService implements se.iths.weblab2.Service {
+public class FishService implements se.iths.weblab2.services.Service {
 
     public FishRepository fishRepository;
 

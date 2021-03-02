@@ -1,4 +1,4 @@
-package se.iths.weblab2;
+package se.iths.weblab2.dtos;
 
 public class FishDto {
     private int id;

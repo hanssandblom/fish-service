@@ -1,4 +1,4 @@
-package se.iths.weblab2;
+package se.iths.weblab2.entities;
 
 import javax.persistence.*;
 

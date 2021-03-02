@@ -1,4 +1,6 @@
-package se.iths.weblab2;
+package se.iths.weblab2.services;
+
+import se.iths.weblab2.dtos.FishDto;
 
 import java.util.List;
 import java.util.Optional;

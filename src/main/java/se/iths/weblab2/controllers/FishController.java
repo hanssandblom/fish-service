@@ -1,8 +1,10 @@
-package se.iths.weblab2;
+package se.iths.weblab2.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import se.iths.weblab2.dtos.FishDto;
+import se.iths.weblab2.services.Service;
 
 import java.util.List;
 
