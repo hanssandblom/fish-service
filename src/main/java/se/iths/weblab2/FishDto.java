@@ -15,6 +15,9 @@ public class FishDto {
         this.weight = weight;
     }
 
+    public FishDto() {
+    }
+
     public int getId() {
         return id;
     }
