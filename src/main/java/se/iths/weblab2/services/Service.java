@@ -10,6 +10,10 @@ public interface Service {
 
     Optional<FishDto> getOne(Integer id);
 
+    List<FishDto> searchByName(String name);
+
+    List<FishDto> searchByGender(String gender);
+
     FishDto createFish(FishDto fish);
 
     void delete(Integer id);

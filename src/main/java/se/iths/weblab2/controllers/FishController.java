@@ -28,6 +28,16 @@ public class FishController {
         return service.getOne(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Could not find id " + id));
     }
 
+    @GetMapping(value = "/fish/search", params = "name")
+    public List<FishDto> searchByName(@RequestParam String name) {
+        return service.searchByName(name);
+    }
+
+    @GetMapping(value = "/fish/search", params = "gender")
+    public List<FishDto> searchByGender(@RequestParam String gender) {
+        return service.searchByGender(gender);
+    }
+
     @PostMapping("/fish")
     @ResponseStatus(HttpStatus.CREATED)
     public FishDto create(@RequestBody FishDto fish){

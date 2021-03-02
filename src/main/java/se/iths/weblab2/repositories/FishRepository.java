@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface FishRepository extends JpaRepository<Fish, Integer> {
     List<Fish> findAllByName(String name);
+    List<Fish> findAllByGender(String name);
 }

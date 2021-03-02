@@ -34,6 +34,14 @@ public class FishService implements se.iths.weblab2.services.Service {
         return mapp(fishRepository.save(mapp(fish)));
     }
 
+    public List<FishDto> searchByName(String name) {
+        return mapp(fishRepository.findAllByName(name));
+    }
+
+    public List<FishDto> searchByGender(String gender) {
+        return mapp(fishRepository.findAllByGender(gender));
+    }
+
     public void delete(Integer id) {
         fishRepository.deleteById(id);
     }
