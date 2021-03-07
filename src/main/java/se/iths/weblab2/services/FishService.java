@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import se.iths.weblab2.dtos.FishDto;
+import se.iths.weblab2.dtos.FishGender;
 import se.iths.weblab2.entities.Fish;
 import se.iths.weblab2.repositories.FishRepository;
 
@@ -46,6 +47,8 @@ public class FishService implements se.iths.weblab2.services.Service {
         fishRepository.deleteById(id);
     }
 
+
+
     public FishDto replace(Integer id, FishDto fishDto) {
         Optional<Fish> fish = fishRepository.findById(id);
         if(fish.isPresent())
@@ -61,6 +64,19 @@ public class FishService implements se.iths.weblab2.services.Service {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                     "Id " + id + " not found.");
     }
+
+    public FishDto updateGender(Integer id, FishGender fishGender) {
+        Optional<Fish> fish = fishRepository.findById(id);
+        if(fish.isPresent()) {
+            Fish updateFish = fish.get();
+            if(fishGender.gender != null)
+                updateFish.setGender(fishGender.gender);
+            return mapp(fishRepository.save(updateFish));
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id " + id + " not found.");
+        }
+    }
+
 
     public FishDto update(Integer id, FishDto fishDto) {
         Optional<Fish> fish = fishRepository.findById(id);

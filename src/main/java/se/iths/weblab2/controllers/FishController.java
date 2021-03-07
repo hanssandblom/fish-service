@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se.iths.weblab2.dtos.FishDto;
+import se.iths.weblab2.dtos.FishGender;
 import se.iths.weblab2.services.Service;
 
 import java.util.List;
@@ -59,9 +60,9 @@ public class FishController {
         return service.update(id, fishDto);
     }
 /*
-    @RequestMapping(value ="/fish/search", method = RequestMethod.GET)
-    public FishDto search(@RequestParam (value = "search", required = false)FishDto fishDto) {
-        return fishDto;
+    @PatchMapping("/fish/{id}")
+    public FishDto updateGender(@RequestBody FishGender fishGender, @PathVariable Integer id) {
+        return service.updateGender(id, fishGender);
     }
 */
 }
